@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+</head>
+<body>
+    <h1>Cadastro do Usuário</h1>
+    
+    <form action="/submit" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="nome" id="nome" required><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required><br><br>
+
+        <label for="sexo">Sexo:</label>
+        <input type="radio" id="masculino" name="sexo" value="masculino">
+        <label for="masculino">Masculino</label>
+        <input type="radio" id="feminnino" name="sexo" value="feminino">
+        <label for="feminino">Feminino</label><br><br>
+
+        <label for="interesses">Interesses:</label><br>
+        <input type="checkbox" id="tecnologia" name="interesses" value="tecnologia">
+        <label for="tecnologia">Tecnologia</label><br>
+        <input type="checkbox" id="musica" name="interesses" value="musica">
+        <label for="musica">Música</label><br>
+        <input type="checkbox" id="esporte" name="interesses" value="esporte">
+        <label for="esporte">Esporte</label><br><br>
+
+        <laber for="cidade">Cidade:</laber>
+        <select id="cidade" name="cidade" required>
+            <option value="sp">São paulo</option>
+            <option value="bh">Belo Horizonte</option>
+            <option value="ba">Bahia</option>
+            <option value="rj">Rio de Janeiro</option>
+            <option value="fsa">Feira de Santana</option>
+        </select><br><br>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+</body>
+</html>
