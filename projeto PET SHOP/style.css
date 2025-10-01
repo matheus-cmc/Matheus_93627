@@ -1,0 +1,47 @@
+nav{
+
+
+justify-content: center;
+background-color: orange;
+border-bottom: 4px solid rgb(177, 114, 5);
+border-top: 30px solid orange;
+
+
+}
+
+img{
+
+    padding: center;
+    width: 200px;
+    height: 200px;
+    padding-left: 20px;
+    margin-top: 20px;
+    color: orange;
+    border: 100px;
+
+    
+}
+
+div{
+justify-content: center;
+display: flexbox;
+}
+
+ul{
+
+   justify-content: center;
+   display: flex;
+
+
+}
+
+li{
+    
+    text-align: center;
+    list-style-type: none;
+    padding: 20px;
+    font-weight: bold;
+    background-color: orange;
+    justify-content: center;
+
+}
