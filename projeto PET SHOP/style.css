@@ -25,6 +25,8 @@ img{
 div{
 justify-content: center;
 display: flexbox;
+border-top: orange ;
+border-bottom: 1000px;
 }
 
 ul{
