@@ -1,0 +1,44 @@
+nav{
+
+
+
+    background-color: rgb(6, 75, 224);
+    margin: 22px;
+
+
+}
+
+
+/*Criando o menu estilizado Simples*/
+ul{
+
+   /*Alinha os itens na horizontal*/
+   display: flex;
+
+
+}
+
+li{
+
+
+    /*Tira as Bolinhas dos itens*/
+    list-style-type: none;
+    
+    padding: 20px;
+
+}
+
+
+a{
+
+
+
+   /*Tira o sublinhado do link*/
+   text-decoration: none;
+   color: azure;
+   font-weight: bold;
+   font-size:  22px;
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
+}
