@@ -57,9 +57,9 @@ h2{
 
     padding: 15px;
     margin-left: 20px;
-    margin-right: 80px;
+    margin-right: 20px;
     background-color: #BDC;
-    color: blue;
+    color: white;
     border: 1px solid blue;
 
 }
@@ -71,8 +71,9 @@ img{
 
     /*Altura*/
     height: 400px;
-    padding-left: 300px;
+    padding-left: 20px;
     margin-top: 50px;
+ 
 
     
 
@@ -89,4 +90,27 @@ p{
     text-align: justify;
     margin-left: 30px;
     margin-top: 50px;
+}
+
+footer{
+
+ background-color: #BDC;
+ margin-left: 20px;
+ margin-right: 20px;
+
+
+}
+
+h3{
+
+    padding-top: 20px;
+    text-align:  center;
+    color:white;
+    margin-bottom:  20px;
+    padding-bottom: 13px;
+    border: 1px solid blue;
+   /*Bottom é para baixo*/
+   /**/
+   text-shadow: blue;
+
 }
