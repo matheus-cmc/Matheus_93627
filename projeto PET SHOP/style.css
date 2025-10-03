@@ -4,6 +4,7 @@ nav{
 justify-content: center;
 background-color: orange;
 border-bottom: 4px solid rgb(177, 114, 5);
+margin: 0px;
 
 
 }
@@ -27,6 +28,34 @@ display: flexbox;
 border-top: orange ;
 border-bottom: 1000px;
 }
+
+banner{
+
+   position: relative;
+    width: 100%;
+    height: 400px;
+    background: url("..//CSS-002/img/img1.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;    
+}
+.texto-banner p{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* fundo transparente pra destacar texto */
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+.texto-banner h2{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 10px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 200px;
+}
+
 
 ul{
 
@@ -52,23 +81,16 @@ banner{
 }
 
 footer{
-display: inline-block;
-background-color: orange;
-background-color: orange;
-font-size: 10px;
-font-weight: normal;
-padding-left: 100px;
-padding-right: 1700px;
-padding-bottom: 10px;
-margin-top: 160px ;
- text-align: center;
+    background-color: rgb(255, 123, 0);
+    text-align: justify;
+    border-top: 4px solid rgb(255, 94, 0);
+    font-size: 20px;
 }
-
-h3{
-color: orange;
-font-size: 30px;
-font-family:Arial, Helvetica, sans-serif;
-
+h{
+    padding-top: 5px;
+    text-align: center;
+    color: black;
+    padding-bottom: 13px;
 }
 h4{
     padding-right: 100px;
@@ -92,6 +114,7 @@ button{
    border-radius: 0;
    color: white;
    cursor: pointer;
+  
 
 }
 h4{
