@@ -46,4 +46,57 @@ li{
     justify-content: center;
 
 }
+banner{
+
+    width: 1000;
+}
+
+footer{
+display: inline-block;
+background-color: orange;
+background-color: orange;
+font-size: 10px;
+font-weight: normal;
+padding-left: 100px;
+padding-right: 1700px;
+padding-bottom: 10px;
+margin-top: 160px ;
+ text-align: center;
+}
+
+h3{
+color: orange;
+font-size: 30px;
+font-family:Arial, Helvetica, sans-serif;
+
+}
+h4{
+    padding-right: 100px;
+}
+h5{
+    justify-content: center;
+    padding-right: 50px;
+    font-weight: normal;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+button{
+
+   display: flex;
+   justify-content: center;
+   padding: 8px 20px;
+   background-color: orange;
+   font-size: 14px;
+   border: none;
+   border-radius: 0;
+   color: white;
+   cursor: pointer;
+
+}
+h4{
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
 /*fim*/
