@@ -1,3 +1,10 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+
+}
+
 nav{
 
 
@@ -7,6 +14,13 @@ border-bottom: 4px solid rgb(177, 114, 5);
 margin: 0px;
 
 
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh; /* Faz com que o corpo da página ocupe 100% da altura da tela */
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
 }
 
 img{
@@ -51,9 +65,10 @@ banner{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-shadow: 10px solid black;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     margin-bottom: 200px;
+    padding;
 }
 
 
@@ -81,27 +96,24 @@ banner{
 }
 
 footer{
-    background-color: rgb(255, 123, 0);
-    text-align: justify;
-    border-top: 4px solid rgb(255, 94, 0);
-    font-size: 20px;
-}
-h{
-    padding-top: 5px;
+   background-color: rgb(255, 123, 0);
     text-align: center;
-    color: black;
+    padding: auto;
     padding-bottom: 13px;
+    
+}
+h3{
+    color: orange;
+margin:auto;
+padding: 50px;
+
 }
 h4{
-    padding-right: 100px;
+    padding-right: 50px;
 }
 h5{
-    justify-content: center;
-    padding-right: 50px;
-    font-weight: normal;
-    font-size: 10px;
+ font-size: 10px; 
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
 }
 button{
 
@@ -114,12 +126,26 @@ button{
    border-radius: 0;
    color: white;
    cursor: pointer;
-  
+   margin-right: 10px;
+   margin-top: 100px;
+   margin-bottom: 15px;
 
 }
 h4{
     font-weight: normal;
     font-family: Arial, Helvetica, sans-serif;
 
+}
+
+h5{
+    padding-top: 14px;
+    padding-bottom: 15px;
+    text-align: center;
+    color: black;
+    padding-bottom: 13px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
 }
 /*fim*/
