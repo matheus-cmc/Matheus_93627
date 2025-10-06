@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contato</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div>
@@ -12,15 +13,41 @@
                  <center>
                 <img src="/CSS-002/img/pet-logo.jpg" alt="">
                 </center>
-                <ul>
-                    
-                    <li><a href="index.html"</a>Início</li>
-                    <li a href="">Serviços</li>
-                    <li a href="">Sobre Nós</li>
-                    <li a >Contato</li>
-                </ul>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="#">Serviços</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+
             </nav>
-    </div>            
-    
+            <h1>Fale conosco</h1>
+    </div> 
+
+<div class="formulário">
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+        </div>
+
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Seu E-mail">
+        </div>
+
+        <div>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem"></textarea>
+        </div>
+
+     <button type="submit">Enviar</button>
+
+
+        <div class="whatsapp">
+            <p><strong>Ou fake diretamente pelo whatsapp</strong></p>
+            <a href="https://wa.me/5599999999999" target="_blank"> Enviar mensagem no WhatsApp</a>
+        </div>
+ </div>
+
 </body>
 </html>
