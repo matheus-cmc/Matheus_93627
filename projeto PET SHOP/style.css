@@ -29,7 +29,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh; /* Faz com que o corpo da página ocupe 100% da altura da tela */
     display: flex;
-    flex-direction: column; /* Alinha os elementos verticalmente */
+    flex-direction: column; 
+    background-color: #eaf6ff;
 }
 
 img{
@@ -161,4 +162,70 @@ h5{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 9pt;
 }
+.formulario{
+ width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  background-color: #eaf6ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.formulario label{
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;       /* Ocupa toda a largura do container */
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+
+.formulario button {
+  margin-top: 15px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #e67e22;
+}
+
+.whatsapp {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.whatsapp a {
+  background-color: #25d366;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.whatsapp a:hover {
+  background-color: #1ebe57;
+}
+
+
 /*fim*/
