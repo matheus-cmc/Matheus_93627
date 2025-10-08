@@ -1,0 +1,12 @@
+H1{
+    
+    display: block;
+    background-color: red;
+    width: 120px;
+    padding: 120px;
+}
+
+h2{
+    display: flex;
+    background-color: green;
+}

@@ -1,0 +1,396 @@
+
+body{
+justify-content: center;
+align-items: center;
+display: flex;
+height: 100vh;
+}
+
+div.tabu{
+   
+   width: 724px;
+   height: 490px;
+   display: block;
+   background-color: black(252, 252, 255);
+   border: 8 px solid black;
+   box-shadow: 0 0 25px black;
+   margin-right: 70px;
+   border: black;
+
+
+}
+
+div.f1{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f2{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f3{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f4{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+div.f5{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f6{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f7{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color:white;
+
+}
+
+div.f8{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f9{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f10{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f11{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+div.f12{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f13{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f14{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color:black;
+
+}
+
+div.f15{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f16{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f17{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f18{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+div.f19{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f20{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f21{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color:white;
+
+}
+div.f22{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f23{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f24{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f25{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+div.f26{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+
+}
+
+div.f27{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f28{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color:black;
+
+}
+
+div.f29{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f30{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+}
+
+
+div.f31{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+
+}
+
+div.f32{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+}
+
+div.f33{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+}
+
+div.f32{
+  
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+}
+
+div.f33{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+}
+div.f34{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: black;
+}
+
+
+div.f35{
+  
+   display: inline-block;
+   position: relative;
+   width: 100px;
+   height: 100px;
+   background-color: white;
+}
+
