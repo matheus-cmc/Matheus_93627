@@ -1,0 +1,87 @@
+*{
+
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+
+
+
+
+h1{
+   font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(7, 173, 214);
+    height: 100px;
+    
+   
+
+}
+
+body{
+
+    background-color: white;
+}
+
+div{
+
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: rgb(0, 203, 253);
+    padding: 50px;
+    margin-top: px;
+    
+   
+}
+h2{
+    margin:50px;
+}
+
+p.div{
+    margin: 30px;
+}
+
+div.basico{
+ display: block;
+ background-color: rgb(255, 255, 255);
+ color:blue;
+}
+
+button{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    padding: 5px 10px;
+    padding-bottom: 10px;
+    border: red;
+
+}
+
+footer{
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+
+div.basico button{
+
+    background-color: green;
+}
+
+
+div.intermediaria button{
+
+    background-color: green;
+}
+
+
+div.avançado button{
+
+    background-color: green;
+}
