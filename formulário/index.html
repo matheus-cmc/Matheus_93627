@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>forms</title>
+</head>
+<body>
+
+  <section>
+   <form id="form" onsubmit="return validateform()">
+    <h1>Cadastro</h1>
+     <div class="form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome"><br><br>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu E-mail"><br><br>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Digite sua senha"><br><br>
+
+            <label for="confirmasenha">Confirmar senha:</label>
+            <input type="password" id="confirmasenha" name="confirmasenha" placeholder="Digite sua senha novamente"><br><br>
+         
+          <button type="submit">Cadastrar</button>
+          <p id="erro-message"></p>
+      </div>
+          
+
+          </form>
+  </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
