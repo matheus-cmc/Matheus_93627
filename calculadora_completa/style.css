@@ -10,7 +10,7 @@ body{
     display: flex;
     align-items: center;
     height: 100vh;
-    background-color: antiquewhite;
+    background-color: white;
 
 
 }
@@ -32,9 +32,10 @@ flex-direction: column;
 justify-items: center;
 align-items: center;
 display: flex;
-padding: 20px 30px;
+padding: 40px 50px;
 box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-border-radius: 10px;
+border-radius: 100px;
+background-color: rgb(190, 182, 184);
 }
 
 
@@ -50,6 +51,9 @@ button{
     background-color: black;
     height: 50px;
     width: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 
 
 }
