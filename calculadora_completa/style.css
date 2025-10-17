@@ -20,7 +20,7 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
-    background-color: black;
+  background-color: gray;
     padding: 20px;
     border-radius: 10px;
     
@@ -46,6 +46,8 @@ input{
 }
 
 button{
+    color: white;
+    background-color: black;
     height: 50px;
     width: 50px;
 
@@ -58,4 +60,15 @@ background-color: blue;
 }
 .botao_0{
    width: 50px;
+}
+
+.maior{
+    position: relative;
+    right: 26px;
+    width: 103px;
+}
+
+.menor{
+    position: relative;
+    right: 29px;
 }
