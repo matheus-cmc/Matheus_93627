@@ -20,7 +20,7 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
-  background-color: gray;
+  background-color: rgb(184, 7, 7);
     padding: 20px;
     border-radius: 10px;
     
@@ -35,7 +35,7 @@ display: flex;
 padding: 40px 50px;
 box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 border-radius: 100px;
-background-color: rgb(190, 182, 184);
+background-color: rgb(233, 230, 232);
 }
 
 
@@ -63,7 +63,9 @@ background-color: blue;
 
 }
 .botao_0{
-   width: 50px;
+    padding: 12px 12px;
+    margin: 50px;
+    width: 50px;
 }
 
 .maior{
