@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: antiquewhite;
+
+
+}
+
+.fundo{
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    
+
+}
+
+.calculadora{
+flex-direction: column;
+justify-items: center;
+align-items: center;
+display: flex;
+padding: 20px 30px;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+border-radius: 10px;
+}
+
+
+input{
+    width: 209px;
+    height: 50px;
+    position: relative;
+    up: 100px;
+}
+
+button{
+    height: 50px;
+    width: 50px;
+
+
+}
+
+.a{
+background-color: blue;
+
+}
+.botao_0{
+   width: 50px;
+}
