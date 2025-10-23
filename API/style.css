@@ -1,0 +1,56 @@
+/* Centralize o conteúdo da página*/
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+     background-color: white;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     width: 300px;
+     text-align: center;
+}
+
+h2{
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column; /*coloca os itens na coluna */
+    gap: 10px; /*Espaçamento entre os itens*/
+}
+
+input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button{
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none; /*Remove as bordas*/
+    border-radius: 5px; /*bordas arredondadas*/
+    cursor: pointer; /*Define o cursor com "pointer"*/
+}
+
+/*Estilo para resultados*/
+button:hover{
+    background-color: #218838;
+}
+
+ /*Estilo para o resultado*/
+#resultado{
+    margin-top: 20px;
+    text-align: left; /*Alinha textos a esquerda*/
+}
