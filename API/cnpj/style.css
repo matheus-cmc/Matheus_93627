@@ -37,7 +37,7 @@ input{
 
 button{
     padding: 10px;
-    background-color: #28a745;
+    background-color: #190bd8;
     color: white;
     border: none; /*Remove as bordas*/
     border-radius: 5px; /*bordas arredondadas*/
@@ -46,11 +46,11 @@ button{
 
 /*Estilo para resultados*/
 button:hover{
-    background-color: #218838;
+    background-color: #a5e709;
 }
 
  /*Estilo para o resultado*/
 #resultado{
-    margin-top: 20px;
+    margin-top: 0px;
     text-align: left; /*Alinha textos a esquerda*/
 }
