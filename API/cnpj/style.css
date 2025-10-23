@@ -1,7 +1,7 @@
 /* Centralize o conteúdo da página*/
 body{
     font-family: Arial, sans-serif;
-    background-color: #200ae2;
+    background-color:#9CA653;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@ body{
 }
 
 .container{
-     background-color: rgb(7, 248, 59);
+     background-color:white;
      padding: 40px;
      border-radius: 10px;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@ input{
 
 button{
     padding: 10px;
-    background-color: #190bd8;
+    background-color: #06440e;
     color: white;
     border: none; /*Remove as bordas*/
     border-radius: 5px; /*bordas arredondadas*/
@@ -46,7 +46,7 @@ button{
 
 /*Estilo para resultados*/
 button:hover{
-    background-color: #a5e709;
+    background-color: #000000;
 }
 
  /*Estilo para o resultado*/
