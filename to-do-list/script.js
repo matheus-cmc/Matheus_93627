@@ -13,18 +13,21 @@ addTaskButton.addEventListener('click', function() {
         taskInput.value = ''; // Limpa o campo de entrada após adicionar a tarefa
     }
 });
-
 // Função para adicionar uma nova tarefa
 function addTask(taskText) {
+
+
     // Cria um novo item de lista
     const listItem = document.createElement('li');
     listItem.className = 'task-item'; // Adiciona a classe de estilo ao item de lista
 
+    
     // Cria o elemento de texto para a tarefa
     const taskElement = document.createElement('span');
     taskElement.className = 'task-text'; // Adiciona a classe de estilo ao texto da tarefa
     taskElement.textContent = taskText; // Define o texto da tarefa
 
+ 
     // Cria o botão de edição
     const editButton = document.createElement('button');
     editButton.className = 'edit-task'; // Adiciona a classe de estilo ao botão de edição
@@ -69,3 +72,4 @@ taskInput.addEventListener('keypress', function(event) {
         addTaskButton.click(); // Aciona o clique no botão de adicionar tarefa
     }
 });
+//fim//

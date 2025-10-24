@@ -1,98 +1,113 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100v;
+/* Estilo geral do corpo da página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte padrão do texto */
+    background-color: #f4f4f4; /* Cor de fundo clara para toda a página */
+    margin: 0; /* Remove as margens padrão do navegador */
+    padding: 0; /* Remove o preenchimento padrão do navegador */
+    display: flex; /* Usa flexbox para centrar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    height: 100vh; /* Define a altura da página como 100% da altura da janela de visualização */
 }
 
-.conatiner{
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30px;
-    padding: 20px;
+/* Estilo para o contêiner principal da To-Do List */
+.container {
+    background-color: #ffffff; /* Fundo branco para o contêiner */
+    border-radius: 8px; /* Bordas arredondadas no contêiner */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor do contêiner */
+    width: 300px; /* Largura fixa do contêiner */
+    padding: 20px; /* Preenchimento interno do contêiner */
 }
 
-h1{
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+/* Estilo para o título da lista de tarefas */
+h1 {
+    font-size: 24px; /* Tamanho da fonte do título */
+    color: #333; /* Cor do texto do título */
+    text-align: center; /* Alinha o título ao centro */
+    margin-bottom: 20px; /* Espaço abaixo do título */
 }
 
-.input-container{
-    display: flex;
-    margin-bottom: 20px;
+/* Estilo para o contêiner de entrada */
+.input-container {
+    display: flex; /* Usa flexbox para alinhar os itens horizontalmente */
+    margin-bottom: 20px; /* Espaço abaixo do contêiner de entrada */
 }
 
-#task-input{
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Estilo para o campo de entrada de tarefa */
+#task-input {
+    flex: 1; /* Faz o campo de entrada ocupar o máximo de espaço disponível */
+    padding: 10px; /* Preenchimento interno do campo de entrada */
+    font-size: 16px; /* Tamanho da fonte do texto no campo de entrada */
+    border: 1px solid #ccc; /* Borda cinza clara ao redor do campo de entrada */
+    border-radius: 4px; /* Bordas arredondadas no campo de entrada */
 }
 
-#add-task-button{
-    padding: 10px 15px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4x;
-    cursor: pointer;
-    margin-left: 10px;
+/* Estilo para o botão de adicionar tarefa */
+#add-task-button {
+    padding: 10px 15px; /* Preenchimento interno do botão */
+    font-size: 16px; /* Tamanho da fonte do texto no botão */
+    color: #fff; /* Cor do texto do botão */
+    background-color: #007bff; /* Cor de fundo azul para o botão */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 4px; /* Bordas arredondadas no botão */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    margin-left: 10px; /* Espaço à esquerda do botão */
 }
 
-#add-tasl-button:hover{
-    background-color: #0056b3;
+/* Estilo para o botão de adicionar tarefa quando o mouse passa sobre ele */
+#add-task-button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo para um tom de azul mais escuro */
 }
 
-#task-list{
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Estilo para a lista de tarefas */
+#task-list {
+    list-style: none; /* Remove os marcadores padrão da lista */
+    padding: 0; /* Remove o preenchimento interno da lista */
+    margin: 0; /* Remove a margem padrão da lista */
 }
 
-#task-item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+/* Estilo para cada item de tarefa */
+.task-item {
+    display: flex; /* Usa flexbox para alinhar o item de tarefa e o botão de remoção */
+    justify-content: space-between; /* Espaça o item de tarefa e o botão de remoção */
+    align-items: center; /* Alinha verticalmente o conteúdo do item de tarefa */
+    padding: 10px; /* Preenchimento interno do item de tarefa */
+    border-bottom: 1px solid #eee; /* Borda inferior cinza clara para separar os itens */
 }
 
-#task-text{
-    font-size: 16px;
+/* Estilo para o texto da tarefa */
+.task-text {
+    font-size: 16px; /* Tamanho da fonte do texto da tarefa */
 }
 
-.remove-task{
-    background-color: #dc3545;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+/* Estilo para o botão de remoção da tarefa */
+.remove-task {
+    background-color: #dc3545; /* Cor de fundo vermelha para o botão de remoção */
+    color: #fff; /* Cor do texto do botão de remoção */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 5px 10px; /* Preenchimento interno do botão de remoção */
+    border-radius: 4px; /* Bordas arredondadas no botão de remoção */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
 }
 
-.remove-task:hover{
-    background-color: #c82333;
+/* Estilo para o botão de remoção da tarefa quando o mouse passa sobre ele */
+.remove-task:hover {
+    background-color: #c82333; /* Muda a cor de fundo para um tom de vermelho mais escuro */
 }
 
-.edit_task{
-    background-color: #29a745;
-    color: #fff;
-    border: none;
-    padding: 5pxp 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 5px;
+
+/* Estilo para o botão de edição da tarefa */
+.edit-task {
+    background-color: #28a745; /* Cor de fundo verde para o botão de edição */
+    color: #fff; /* Cor do texto do botão de edição */
+    border: none; /* Remove a borda padrão do botão */
+    padding: 5px 10px; /* Preenchimento interno do botão de edição */
+    border-radius: 4px; /* Bordas arredondadas no botão de edição */
+    cursor: pointer; /* Muda o cursor para indicar que o botão é clicável */
+    margin-right: 5px; /* Espaço à direita do botão de edição */
 }
 
-.edit_task:hover{
-    background-color: #218838;
+/* Estilo para o botão de edição da tarefa quando o mouse passa sobre ele */
+.edit-task:hover {
+    background-color: #218838; /* Muda a cor de fundo para um tom de verde mais escuro */
 }
