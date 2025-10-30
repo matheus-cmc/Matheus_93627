@@ -10,7 +10,7 @@ header{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin-bottom: 0px;
-    padding: 120px;
+    padding: 10px;
     color: white;
     font-size: 25px;
     font-family: ;
@@ -26,15 +26,15 @@ p{
      font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     font-family: ;
     background-color: rgb(4, 4, 224);
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 
 }
 
 .meio{
-    padding: 120px;
+    padding: 200px;
     text-align: left;
    background-color: blanchedalmond;
    font-family: Arial, Helvetica, sans-serif;
@@ -47,14 +47,18 @@ h2{
 }
 
 h3{
+    font-weight: bold;
+    display: block;
+    font-size: 17px;
     text-align: justify;
 }
-
-img{
-    text-align: right;
-    border-radius: 30px;
+.foto{
+    position: relative;
+    left: 1150px;
+    width: 450px;
+    height: 350px;
+    border-radius: 5px;
 }
-
 .destaque{
     font-size: 25px;
     padding: 120px;
@@ -64,5 +68,5 @@ img{
 }
 
 h4{
-    margin-bottom: 120px;
+    margin-bottom: 200px;
 }
