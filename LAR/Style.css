@@ -2,51 +2,45 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
 }
 
 header{
-
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin-bottom: 0px;
     padding: 10px;
     color: white;
     font-size: 25px;
-    font-family: ;
-    background-color: rgb(4, 4, 224);
-    
+    background-color: rgb(26, 26, 129);
 }
 
 h1{
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
 p{
-     font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: white;
     font-size: 17px;
-    font-family: ;
-    background-color: rgb(4, 4, 224);
+    background-color: rgb(26, 26, 129);
     margin-bottom: 50px;
-
 }
 
 .meio{
     display: flex;
     padding: 200px;
-   
     background-color: blanchedalmond;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(26, 26, 129);
 }
+
 .texto{
     background-color: blanchedalmond;
     display: inline-block;
     margin-left: 190px;
-    padding-left: 20px;
-    padding-right: 30px;
+    padding-right: 50px;
     margin-right: 5px;
     padding-top: 100px;
 }
@@ -54,22 +48,24 @@ p{
 h2{
     text-align: left;
     margin-bottom: 10px;
+    padding-right: 20px;
 }
 
 h3{
-    
     font-family: Arial, Helvetica, sans-serif;
     display: block;
     font-size: 17px;
     text-align: justify;
     font-weight: normal;
 }
+
 .foto{
     margin-left: 50px;
     width: 450px;
     height: 350px;
     border-radius: 5px;
 }
+
 .destaque{
     font-size: 25px;
     padding: 120px;
@@ -80,12 +76,12 @@ h3{
 }
 
 .cartas{
-    display: flex; /* deixa os cards lado a lado */
-    justify-content: center; /* centraliza os cards */
-    gap: 50px; /* espaço entre os cards */
+    display: flex;
+    justify-content: center;
+    gap: 50px;
     margin-top: 10px;
-    flex-wrap: wrap; /* faz quebra em telas menores */
-   padding: 2px;
+    flex-wrap: wrap;
+    padding: 2px;
 }
 
 .carta {
@@ -95,13 +91,12 @@ h3{
     width: 350px;
     padding: 15px;
     text-align: center;
-    
 }
 
 .carta img {
     width: 100%;
     height: 150px;
-    object-fit: cover; /* mantém proporção e corta excesso */
+    object-fit: cover;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -109,102 +104,227 @@ h3{
 .carta h5 {
     font-size: 18px;
     margin-bottom: 8px;
-    color:rgb(26, 26, 129);;
+    color: rgb(26, 26, 129);
 }
 
 .carta p {
-    background-color:  blanchedalmond;
+    background-color: blanchedalmond;
     font-size: 14px;
-    color: rgb(26, 26, 129);;
-   
+    color: rgb(26, 26, 129);
 }
 
 .carta:hover{
-     background-color:  white;
+    background-color: white;
 }
+
 h4{
     margin-bottom: 200px;
 }
 
-.contato{
-
-
-}
-
-form{
-    padding: 50px;
-    text-align: center;
-     background-color:rgb(26, 26, 129);
-}
-label{
+/* SEÇÃO CONTATO CORRIGIDA */
+.contato-section {
+    background-color: rgb(26, 26, 129);
+    padding: 80px 20px;
     color: white;
-    border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 10px;
-}
- label .mensagem{
- position: relative;
- right: 100px;
- left: 5px;
- }
-
- input.mensagem{
-    text-align: left;
-    position: relative;
-    height: 100px;
- }
-
-input{
-    color:black;
-    background-color: rgb(255, 255, 255);
-    width: 400px;
-    height: 40px;
-    border-radius: 10px;
 }
 
-button{
+.subtitulo{
+     background-color: rgb(26, 26, 129);
+}
+
+.contato-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contato-section h2 {
     text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
     color: white;
-    background-color:brown;
-    height: 50px;
-    border-radius: 10px;
-    width: 200px;
+    font-weight: bold;
 }
 
+.contato-section .subtitulo {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.contato-content {
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Coluna do Formulário */
+.form-coluna {
+    flex: 1;
+    max-width: 500px;
+}
+
+.campo-group {
+    margin-bottom: 25px;
+}
+
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+}
+
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-enviar {
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #a52a2a;
+}
+
+/* Coluna do WhatsApp */
+.whatsapp-coluna {
+    flex: 0 0 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.whatsapp-info {
+    text-align: center;
+}
+
+.whatsapp-texto {
+    background-color:  rgb(26, 26, 129);
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    min-width: 150px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-label {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.whatsapp-numero {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .meio {
+        padding: 100px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .texto {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 0;
+    }
+    
+    .foto {
+        margin-left: 0;
+        margin-top: 30px;
+        width: 100%;
+        max-width: 450px;
+    }
+    
+    .destaque {
+        padding: 60px 20px;
+    }
+    
+    .cartas {
+        gap: 30px;
+    }
+    
+    .carta {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .contato-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .whatsapp-coluna {
+        flex: none;
+        margin-top: 0;
+    }
+    
+    .contato-section {
+        padding: 60px 15px;
+    }
+}
 
 footer{
-    background-color:brown;
+    background-color: brown;
     padding: 20px;
     text-align: center;
 }
-h6{
-    font-size: 30px;
-    color: white;
-    padding-bottom: 20px;
-}
+
 h7{
     text-align: center;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: normal;
     font-size: 15px;
-}
-a{
-    background-color: blue;
-    color: white;
-}
-
-h8{
-    display: inline;
-    color: white;
-}
-
-h9{
-    color: white;
-    padding-top: 50px;
-    margin-bottom: 20px;
-}
-
-.contato{
-    padding-bottom: 30px;
 }
