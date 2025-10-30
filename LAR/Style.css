@@ -75,7 +75,7 @@ h3{
     padding: 120px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0px;
     padding-bottom: 100px;
 }
 
@@ -116,8 +116,77 @@ h3{
     background-color:  blanchedalmond;
     font-size: 14px;
     color: rgb(26, 26, 129);;
-    background-color: ;
+   
+}
+
+.carta:hover{
+     background-color:  white;
 }
 h4{
     margin-bottom: 200px;
+}
+
+.contato{
+
+
+}
+
+form{
+    padding: 50px;
+    text-align: center;
+     background-color:rgb(26, 26, 129);
+}
+label{
+    color: white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+}
+ label .mensagem{
+ position: relative;
+ right: 100px;
+ left: 5px;
+ }
+
+ input.mensagem{
+    text-align: left;
+    position: relative;
+    height: 100px;
+ }
+
+input{
+    color: white;
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+button{
+    text-align: center;
+    color: white;
+    background-color:brown;
+    height: 50px;
+    border-radius: 10px;
+    width: 200px;
+}
+footer{
+    background-color:brown;
+    padding: 20px;
+    text-align: center;
+}
+h7{
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+}
+a{
+    color: white;
+}
+
+h8{
+    display: inline;
+    color: white;
 }
