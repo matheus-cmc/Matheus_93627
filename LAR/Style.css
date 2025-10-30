@@ -11,7 +11,7 @@ header{
     padding: 10px;
     color: white;
     font-size: 25px;
-    background-color: rgb(26, 26, 129);
+    background-color: rgb(4, 4, 224);
 }
 
 h1{
@@ -19,118 +19,182 @@ h1{
     margin-bottom: 50px;
 }
 
-p{
+header p{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: white;
     font-size: 17px;
-    background-color: rgb(26, 26, 129);
+    background-color: rgb(4, 4, 224);
     margin-bottom: 50px;
 }
 
-.meio{
+/* SEÇÃO BEM-VINDO */
+/* SEÇÃO BEM-VINDO - LARGURA TOTAL */
+.meio {
     display: flex;
-    padding: 200px;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 50px;
     background-color: blanchedalmond;
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(26, 26, 129);
+    gap: 60px;
+    width: 100%; /* LARGURA TOTAL DA TELA */
 }
 
-.texto{
-    background-color: blanchedalmond;
-    display: inline-block;
-    margin-left: 190px;
-    padding-right: 50px;
-    margin-right: 5px;
-    padding-top: 100px;
+.texto {
+    flex: 1;
+    max-width: 500px;
 }
 
-h2{
+.texto h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: rgb(26, 26, 129);
+    font-weight: bold;
     text-align: left;
-    margin-bottom: 10px;
-    padding-right: 20px;
 }
 
-h3{
-    font-family: Arial, Helvetica, sans-serif;
-    display: block;
-    font-size: 17px;
-    text-align: justify;
-    font-weight: normal;
+.texto p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: left;
+    color: rgb(26, 26, 129);
+    margin: 0;
 }
 
-.foto{
-    margin-left: 50px;
-    width: 450px;
-    height: 350px;
-    border-radius: 5px;
-}
-
-.destaque{
-    font-size: 25px;
-    padding: 120px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 0px;
-    padding-bottom: 100px;
-}
-
-.cartas{
+.imagem-container {
+    flex: 1;
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-top: 10px;
+}
+
+.foto {
+    width: 100%;
+    max-width: 450px;
+    height: 350px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .meio {
+        flex-direction: column;
+        padding: 60px 20px;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .texto {
+        max-width: 100%;
+    }
+    
+    .texto h2,
+    .texto p {
+        text-align: center;
+    }
+    
+    .foto {
+        max-width: 100%;
+        height: 300px;
+    }
+}
+
+/* SEÇÃO NOSSOS DESTAQUES */
+.destaque {
+    padding: 80px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: white;
+}
+
+.destaque h2 {
+    font-size: 32px;
+    color: rgb(26, 26, 129);
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.cartas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
     flex-wrap: wrap;
-    padding: 2px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .carta {
     background-color: blanchedalmond;
-    border-radius: 20px;
+    border: 2px solid #000;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    width: 350px;
+    width: 280px;
     padding: 15px;
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.carta img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.carta h5 {
-    font-size: 18px;
-    margin-bottom: 8px;
-    color: rgb(26, 26, 129);
-}
-
-.carta p {
-    background-color: blanchedalmond;
-    font-size: 14px;
-    color: rgb(26, 26, 129);
-}
-
-.carta:hover{
+.carta:hover {
+    transform: translateY(-5px);
     background-color: white;
 }
 
-h4{
-    margin-bottom: 200px;
+/* PRIMEIRA IMAGEM - PEQUENA */
+.carta:nth-child(1) img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
 }
 
-/* SEÇÃO CONTATO CORRIGIDA */
+/* SEGUNDA IMAGEM - MÉDIA */
+.carta:nth-child(2) img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+}
+
+/* TERCEIRA IMAGEM - GRANDE */
+.carta:nth-child(3) img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+}
+
+.carta h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: rgb(26, 26, 129);
+    font-weight: bold;
+}
+
+.carta p {
+    background-color: transparent;
+    font-size: 13px;
+    color: rgb(26, 26, 129);
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* SEÇÃO CONTATO */
 .contato-section {
     background-color: rgb(26, 26, 129);
     padding: 80px 20px;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.subtitulo{
-     background-color: rgb(26, 26, 129);
 }
 
 .contato-section .container {
@@ -160,7 +224,6 @@ h4{
     justify-content: center;
 }
 
-/* Coluna do Formulário */
 .form-coluna {
     flex: 1;
     max-width: 500px;
@@ -217,7 +280,6 @@ h4{
     background-color: #a52a2a;
 }
 
-/* Coluna do WhatsApp */
 .whatsapp-coluna {
     flex: 0 0 300px;
     display: flex;
@@ -231,7 +293,6 @@ h4{
 }
 
 .whatsapp-texto {
-    background-color:  rgb(26, 26, 129);
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 16px;
@@ -266,38 +327,73 @@ h4{
     opacity: 0.9;
 }
 
-/* Responsivo */
+/* FOOTER */
+footer{
+    background-color: brown;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
     .meio {
-        padding: 100px 20px;
         flex-direction: column;
+        padding: 60px 20px;
+        gap: 40px;
         text-align: center;
     }
     
     .texto {
-        margin-left: 0;
-        padding: 20px;
-        padding-top: 0;
+        max-width: 100%;
+    }
+    
+    .texto h2,
+    .texto p {
+        text-align: center;
     }
     
     .foto {
-        margin-left: 0;
-        margin-top: 30px;
-        width: 100%;
-        max-width: 450px;
+        max-width: 100%;
+        height: 300px;
     }
     
     .destaque {
-        padding: 60px 20px;
+        padding: 60px 15px;
+    }
+    
+    .destaque h2 {
+        font-size: 28px;
+        margin-bottom: 40px;
     }
     
     .cartas {
-        gap: 30px;
+        gap: 20px;
     }
     
     .carta {
         width: 100%;
-        max-width: 350px;
+        max-width: 260px;
+    }
+    
+    .carta:nth-child(1) img {
+        height: 110px;
+    }
+    
+    .carta:nth-child(2) img {
+        height: 150px;
+    }
+    
+    .carta:nth-child(3) img {
+        height: 180px;
     }
     
     .contato-content {
@@ -313,18 +409,4 @@ h4{
     .contato-section {
         padding: 60px 15px;
     }
-}
-
-footer{
-    background-color: brown;
-    padding: 20px;
-    text-align: center;
-}
-
-h7{
-    text-align: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: normal;
-    font-size: 15px;
 }
