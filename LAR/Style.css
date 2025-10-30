@@ -170,10 +170,17 @@ button{
     border-radius: 10px;
     width: 200px;
 }
+
+
 footer{
     background-color:brown;
     padding: 20px;
     text-align: center;
+}
+h6{
+    font-size: 30px;
+    color: white;
+    padding-bottom: 20px;
 }
 h7{
     text-align: center;
@@ -183,6 +190,7 @@ h7{
     font-size: 15px;
 }
 a{
+    background-color: blue;
     color: white;
 }
 
