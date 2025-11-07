@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quiz do Palmeiras</title>
+    <link rel="stylesheet" href="/static/style-palmeiras.css" />
+</head>
+<body>
+    <div class="quiz-container">
+
+        <!-- Tela de Boas-vindas -->
+        <div id="tela-inicial">
+            <!-- Escudo local -->
+            <img src="/static/img/escudo-palmeiras.jpg" alt="Escudo do Palmeiras" class="escudo" />
+
+            <h1>💚 Bem-vindo ao Quiz do Palmeiras 💚</h1>
+            <p>Mostre que você é Verdão de coração! 🏆</p>
+            <button id="start-btn">Iniciar Quiz ➡️</button>
+            
+        </div>
+
+        <!-- Quiz -->
+        <div id="quiz" style="display: none;"></div>
+
+        <div class="controls" id="controls" style="display: none;">
+            <button id="next-btn">Próxima ➡️</button>
+        </div>
+
+        <!-- Resultado -->
+        <div id="resultado"></div>
+
+    </div>
+
+    <script src="/static/script-palmeiras.js"></script>
+</body>
+</html>
