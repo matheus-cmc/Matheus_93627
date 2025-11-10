@@ -60,6 +60,13 @@ def criar_usuario():
     password = data.get('password')
     confirm_password = data.get('confirm_password')
     
+    # 🔒 VALIDAÇÕES DE SEGURANÇA
+    if not email or not password:
+        return jsonify({'success': False, 'message': 'E-mail e senha são obrigatórios!'})
+    
+    if len(password) < 6:
+        return jsonify({'success': False, 'message': 'Senha deve ter pelo menos 6 caracteres!'})
+    
     if password != confirm_password:
         return jsonify({'success': False, 'message': 'Senhas não coincidem!'})
     
@@ -79,16 +86,28 @@ def cadastrar_produto():
     if 'user_id' not in session:
         return jsonify({'success': False, 'message': 'Não logado!'})
     
-    data = request.get_json()
-    nome = data.get('nome')
-    preco = data.get('preco')
-    quantidade = data.get('quantidade')
+    try:
+        data = request.get_json()
+        nome = data.get('nome')
+        preco = data.get('preco')
+        quantidade = data.get('quantidade')
+        
+        # Validações
+        if not nome or not preco or not quantidade:
+            return jsonify({'success': False, 'message': 'Todos os campos são obrigatórios!'})
+        
+        if preco <= 0 or quantidade < 0:
+            return jsonify({'success': False, 'message': 'Valores inválidos!'})
+        
+        novo_produto = Produto(nome=nome, preco=preco, quantidade=quantidade)
+        db.session.add(novo_produto)
+        db.session.commit()
+        
+        return jsonify({'success': True, 'message': 'Produto cadastrado!'})
     
-    novo_produto = Produto(nome=nome, preco=preco, quantidade=quantidade)
-    db.session.add(novo_produto)
-    db.session.commit()
-    
-    return jsonify({'success': True, 'message': 'Produto cadastrado!'})
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'success': False, 'message': 'Erro ao cadastrar produto!'})
 
 @app.route('/listar_produtos')
 def listar_produtos():
