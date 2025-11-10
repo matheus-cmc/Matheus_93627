@@ -1,24 +1,40 @@
-document.getElementById('formlogin').addEventListener('submit', async function(e) {
+document.getElementById('formCriarLogin').addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm_password').value;
     const messageDiv = document.getElementById('message');
+    
+    if (password !== confirmPassword) {
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'red';
+        messageDiv.textContent = '❌ As senhas não coincidem!';
+        return;
+    }
+    
+    if (password.length < 6) {
+        messageDiv.style.display = 'block';
+        messageDiv.style.color = 'red';
+        messageDiv.textContent = '❌ A senha deve ter pelo menos 6 caracteres!';
+        return;
+    }
     
     // Mostrar loading
     messageDiv.style.display = 'block';
     messageDiv.style.color = '#007bff';
-    messageDiv.textContent = 'Conectando...';
+    messageDiv.textContent = 'Criando conta...';
     
     try {
-        const response = await fetch('/login', {
+        const response = await fetch('/criar_usuario', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
                 email: email,
-                password: password
+                password: password,
+                confirm_password: confirmPassword
             })
         });
         
@@ -28,8 +44,8 @@ document.getElementById('formlogin').addEventListener('submit', async function(e
             messageDiv.style.color = 'green';
             messageDiv.textContent = '✅ ' + data.message;
             setTimeout(() => {
-                window.location.href = '/produtos';
-            }, 1500);
+                window.location.href = '/';
+            }, 2000);
         } else {
             messageDiv.style.color = 'red';
             messageDiv.textContent = '❌ ' + data.message;
