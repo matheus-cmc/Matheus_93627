@@ -15,6 +15,11 @@ document.getElementById('formProduto').addEventListener('submit', async function
         return;
     }
     
+    if (preco <= 0 || quantidade < 0) {
+        showMessage('❌ Preço e quantidade devem ser valores válidos!', 'red');
+        return;
+    }
+    
     showMessage('Cadastrando produto...', 'blue');
     
     try {
@@ -41,7 +46,7 @@ document.getElementById('formProduto').addEventListener('submit', async function
         }
     } catch (error) {
         console.error('Erro:', error);
-        showMessage('❌ Erro de conexão', 'red');
+        showMessage('❌ Erro de conexão com o servidor', 'red');
     }
 });
 
@@ -71,7 +76,9 @@ async function carregarProdutos() {
             listaDiv.innerHTML = '<p style="text-align: center; color: #666; font-style: italic;">Nenhum produto cadastrado ainda.</p>';
         }
     } catch (error) {
-        console.error('Erro:', error);
+        console.error('Erro ao carregar produtos:', error);
+        const listaDiv = document.getElementById('listaProdutos');
+        listaDiv.innerHTML = '<p style="text-align: center; color: red;">Erro ao carregar produtos</p>';
     }
 }
 
