@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'sua-chave-secreta-aqui-123'
 
 print("=" * 50)
-print("🆕 SISTEMA CONFIGURADO PARA MYSQL PORTA 3307")
+print("🆕 SISTEMA COM PRODUTOS POR USUÁRIO - MYSQL 3307")
 print("=" * 50)
 
 # 🎯 MYSQL - PORTA 3307
@@ -22,6 +22,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(200), nullable=False)
+    produtos = db.relationship('Produto', backref='usuario', lazy=True)
 
 class Produto(db.Model):
     __tablename__ = 'produto'
@@ -29,6 +30,7 @@ class Produto(db.Model):
     nome = db.Column(db.String(100), nullable=False)
     preco = db.Column(db.Float, nullable=False)
     quantidade = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # 🔥 NOVO
 
 # Rotas principais
 @app.route('/')
@@ -109,11 +111,21 @@ def cadastrar_produto():
         if not nome or not preco or not quantidade:
             return jsonify({'success': False, 'message': 'Preencha todos os campos!'})
         
-        novo_produto = Produto(nome=nome, preco=preco, quantidade=quantidade)
+        if preco <= 0 or quantidade < 0:
+            return jsonify({'success': False, 'message': 'Preço e quantidade devem ser valores válidos!'})
+        
+        # 🔥 MUDANÇA: Salvar com ID do usuário logado
+        novo_produto = Produto(
+            nome=nome, 
+            preco=preco, 
+            quantidade=quantidade,
+            user_id=session['user_id']  # 🔥 VINCULA AO USUÁRIO
+        )
+        
         db.session.add(novo_produto)
         db.session.commit()
         
-        print(f"✅ PRODUTO SALVO NO MYSQL: {nome} - R$ {preco} - Qtd: {quantidade}")
+        print(f"✅ PRODUTO SALVO NO MYSQL: {nome} - Usuário: {session['user_email']} (ID: {session['user_id']})")
         return jsonify({'success': True, 'message': 'Produto cadastrado!'})
     except Exception as e:
         print(f"❌ Erro ao cadastrar produto: {e}")
@@ -125,7 +137,9 @@ def listar_produtos():
         return jsonify({'success': False, 'message': 'Não logado!'})
     
     try:
-        produtos = Produto.query.all()
+        # 🔥 MUDANÇA: Filtrar apenas produtos do usuário logado
+        produtos = Produto.query.filter_by(user_id=session['user_id']).all()
+        
         produtos_list = []
         for produto in produtos:
             produtos_list.append({
@@ -135,6 +149,7 @@ def listar_produtos():
                 'quantidade': produto.quantidade
             })
         
+        print(f"📦 Listando {len(produtos_list)} produtos para usuário: {session['user_email']}")
         return jsonify({'success': True, 'produtos': produtos_list})
     except Exception as e:
         print(f"❌ Erro ao listar produtos: {e}")
@@ -149,7 +164,6 @@ def logout():
 def teste_db():
     """Teste de conexão com o banco"""
     try:
-        # Tentar contar usuários
         user_count = User.query.count()
         produto_count = Produto.query.count()
         
@@ -173,11 +187,17 @@ def teste_completo():
             user_teste = User(email='teste@teste.com', password=hashed_password)
             db.session.add(user_teste)
             db.session.commit()
+            user_existente = user_teste
         
-        # Criar produto teste se não existir
-        produto_existente = Produto.query.filter_by(nome='Produto Teste').first()
+        # Criar produto teste se não existir (vinculado ao usuário teste)
+        produto_existente = Produto.query.filter_by(nome='Produto Teste', user_id=user_existente.id).first()
         if not produto_existente:
-            produto_teste = Produto(nome='Produto Teste', preco=29.90, quantidade=10)
+            produto_teste = Produto(
+                nome='Produto Teste', 
+                preco=29.90, 
+                quantidade=10,
+                user_id=user_existente.id  # 🔥 VINCULADO AO USUÁRIO
+            )
             db.session.add(produto_teste)
             db.session.commit()
         
@@ -186,7 +206,7 @@ def teste_completo():
         produtos = Produto.query.all()
         
         return f"""
-        <h1>✅ SISTEMA FUNCIONANDO - MYSQL 3307!</h1>
+        <h1>✅ SISTEMA FUNCIONANDO - PRODUTOS POR USUÁRIO!</h1>
         <h3>Usuários no MySQL: {len(users)}</h3>
         <ul>
             {"".join(f'<li>{u.id} - {u.email}</li>' for u in users)}
@@ -194,12 +214,11 @@ def teste_completo():
         
         <h3>Produtos no MySQL: {len(produtos)}</h3>
         <ul>
-            {"".join(f'<li>{p.id} - {p.nome} - R$ {p.preco} - Qtd: {p.quantidade}</li>' for p in produtos)}
+            {"".join(f'<li>{p.id} - {p.nome} - R$ {p.preco} - Qtd: {p.quantidade} - Usuário ID: {p.user_id}</li>' for p in produtos)}
         </ul>
         
-        <p><strong>Agora verifique no MySQL Workbench:</strong></p>
-        <code>SELECT * FROM user;</code><br>
-        <code>SELECT * FROM produto;</code>
+        <p><strong>Verifique no MySQL Workbench:</strong></p>
+        <code>SELECT p.id, p.nome, p.preco, p.quantidade, u.email FROM produto p JOIN user u ON p.user_id = u.id;</code>
         
         <p><a href="/">Voltar para Login</a></p>
         """
@@ -210,7 +229,7 @@ def teste_completo():
 with app.app_context():
     try:
         db.create_all()
-        print("🎉 SISTEMA PRONTO - MYSQL 3307!")
+        print("🎉 SISTEMA PRONTO - PRODUTOS SEPARADOS POR USUÁRIO!")
         print("🌐 Acesse: http://127.0.0.1:5000")
         print("🧪 Teste completo: http://127.0.0.1:5000/teste_completo")
         print("🔍 Teste DB: http://127.0.0.1:5000/teste_db")

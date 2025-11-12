@@ -23,5 +23,41 @@ CREATE TABLE produto (
 SHOW TABLES;
 
 -- 6. Ver a estrutura das tabelas
-DESCRIBE user;
-DESCRIBE produto;
+
+
+USE produtos_cadastro;
+SELECT * FROM user;
+SELECT * FROM produto;
+
+SELECT * FROM user;
+
+USE produtos_cadastro;
+SELECT * FROM user;
+
+SELECT * FROM produto;
+
+USE produtos_cadastro;
+
+-- Adicionar coluna user_id na tabela produto
+ALTER TABLE produto ADD COLUMN user_id INT;
+
+-- Adicionar chave estrangeira
+ALTER TABLE produto ADD CONSTRAINT fk_produto_user 
+FOREIGN KEY (user_id) REFERENCES user(id);
+
+-- Verificar a alteração
+
+
+USE produtos_cadastro;
+
+-- Esta query mostra cada produto com seu respectivo usuário
+SELECT 
+    p.id AS 'ID Produto',
+    p.nome AS 'Nome Produto', 
+    p.preco AS 'Preço',
+    p.quantidade AS 'Quantidade',
+    u.id AS 'ID Usuário',
+    u.email AS 'Email Usuário'
+FROM produto p 
+JOIN user u ON p.user_id = u.id
+ORDER BY u.email, p.id;
