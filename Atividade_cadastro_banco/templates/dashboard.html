@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container dashboard">
+        <div class="welcome">
+            <h2>Bem-vindo, {{ username }}!</h2>
+        </div>
+
+        <div class="product-form">
+            <h3>Cadastrar Produto</h3>
+            <div id="productMessage"></div>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="product_name">Nome do Produto:</label>
+                    <input type="text" id="product_name" name="product_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_description">Descrição:</label>
+                    <input type="text" id="product_description" name="product_description" required>
+                </div>
+                <div class="form-group">
+                    <label for="product_price">Preço:</label>
+                    <input type="number" id="product_price" name="product_price" step="0.01" required>
+                </div>
+                <button type="submit" class="btn">Cadastrar Produto</button>
+            </form>
+        </div>
+
+        <div class="products-list">
+            <h3>Meus Produtos</h3>
+            {% if products %}
+                {% for product in products %}
+                <div class="product-item">
+                    <h4>{{ product.name }}</h4>
+                    <p><strong>Descrição:</strong> {{ product.description }}</p>
+                    <p><strong>Preço:</strong> R$ {{ "%.2f"|format(product.price) }}</p>
+                    <p><strong>Cadastrado em:</strong> {{ product.created_at.strftime('%d/%m/%Y %H:%M') }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Nenhum produto cadastrado ainda.</p>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('logout') }}" class="btn logout-btn">Sair</a>
+        <a href="{{ url_for('index') }}" class="btn home-btn">Página Inicial</a>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
