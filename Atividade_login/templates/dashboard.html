@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SuperMarket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container dashboard">
+        <div class="header">
+            <h2>🛒 SuperMarket</h2>
+        </div>
+
+        <div class="welcome-banner">
+            <h2>Bem-vindo, {{ username }}! 👋</h2>
+            <p>Gerencie seus produtos abaixo</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="product-form">
+                <h3>➕ Cadastrar Produto</h3>
+                <div id="productMessage"></div>
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="product_name">📝 Nome do Produto:</label>
+                        <input type="text" id="product_name" name="product_name" required placeholder="Ex: Arroz Integral">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_description">📋 Descrição:</label>
+                        <input type="text" id="product_description" name="product_description" required placeholder="Ex: Pacote 5kg">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_category">🏷️ Categoria:</label>
+                        <select id="product_category" name="product_category">
+                            <option value="Mercearia">Mercearia</option>
+                            <option value="Hortifruti">Hortifruti</option>
+                            <option value="Açougue">Açougue</option>
+                            <option value="Laticínios">Laticínios</option>
+                            <option value="Bebidas">Bebidas</option>
+                            <option value="Limpeza">Limpeza</option>
+                            <option value="Higiene">Higiene</option>
+                            <option value="Geral">Geral</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="product_price">💰 Preço (R$):</label>
+                        <input type="number" id="product_price" name="product_price" step="0.01" required placeholder="Ex: 25.90">
+                    </div>
+                    <div class="form-group">
+                        <label for="product_quantity">📦 Quantidade:</label>
+                        <input type="number" id="product_quantity" name="product_quantity" value="1" min="1" required>
+                    </div>
+                    <button type="submit" class="btn">✅ Cadastrar Produto</button>
+                </form>
+            </div>
+
+            <div class="products-list">
+                <h3>📦 Meus Produtos ({{ products|length }})</h3>
+                {% if products %}
+                    <div class="products-grid">
+                        {% for product in products %}
+                        <div class="product-card">
+                            <button class="delete-btn" data-product-id="{{ product.id }}">×</button>
+                            <div class="product-header">
+                                <div>
+                                    <div class="product-name">{{ product.name }}</div>
+                                    <div class="product-category">{{ product.category }}</div>
+                                </div>
+                                <div class="product-price">R$ {{ "%.2f"|format(product.price) }}</div>
+                            </div>
+                            <div class="product-description">{{ product.description }}</div>
+                            <div class="product-meta">
+                                <div class="product-quantity">Qtd: {{ product.quantity }}</div>
+                                <div class="product-date">{{ product.created_at.strftime('%d/%m/%Y') }}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="message" style="text-align: center;">
+                        <p>📭 Nenhum produto cadastrado ainda.</p>
+                        <p>Comece cadastrando seu primeiro produto!</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Seção para Deletar Produtos com Senha -->
+        <div class="danger-zone">
+            <h3>⚠️ Gerenciar Produtos</h3>
+            <div class="danger-actions">
+                {% if products %}
+                    {% for product in products %}
+                    <div class="product-delete-item">
+                        <div class="product-info">
+                            <strong>{{ product.name }}</strong> - R$ {{ "%.2f"|format(product.price) }}
+                            <br><small>{{ product.description }}</small>
+                        </div>
+                        <div class="delete-action">
+                            <input type="password" 
+                                   id="password_{{ product.id }}" 
+                                   placeholder="Digite sua senha" 
+                                   class="password-input">
+                            <button onclick="deleteProduct({{ product.id }})" 
+                                    class="btn btn-danger btn-small">
+                                🗑️ Deletar
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Nenhum produto para gerenciar.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Seção para Deletar Conta -->
+        <div class="danger-zone account-delete">
+            <h3>🚨 Zona de Perigo - Deletar Conta</h3>
+            <div class="warning-message">
+                <p>⚠️ <strong>ATENÇÃO:</strong> Esta ação não pode ser desfeita! Todos os seus produtos serão permanentemente deletados.</p>
+            </div>
+            <div class="delete-account-form">
+                <input type="password" 
+                       id="delete_account_password" 
+                       placeholder="Digite sua senha para confirmar" 
+                       class="password-input">
+                <button onclick="deleteAccount()" 
+                        class="btn btn-danger">
+                    🗑️ DELETAR MINHA CONTA
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">🚪 Sair</a>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">🏠 Página Inicial</a>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

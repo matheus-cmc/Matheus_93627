@@ -3,33 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Sistema de Produtos</title>
+    <title>SuperMarket - Sistema de Login</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form id="formlogin">
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" required>
+    <div class="container">
+        <div class="form-container">
+            <div class="hero-section">
+                <h2>🛒 SuperMarket</h2>
+                <p>Gerencie seus produtos de forma simples e eficiente</p>
             </div>
-
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>📦 Cadastro</h3>
+                    <p>Adicione produtos facilmente</p>
+                </div>
+                <div class="feature">
+                    <h3>💰 Preços</h3>
+                    <p>Controle seus valores</p>
+                </div>
+                <div class="feature">
+                    <h3>📊 Estoque</h3>
+                    <p>Gerencie quantidades</p>
+                </div>
             </div>
-
-            <button type="submit">Entrar</button>
-
-            <div class="links">
-                <a href="{{ url_for('criar_login') }}">Criar nova conta</a>
+            
+            <div class="form-footer">
+                <p>Escolha uma opção:</p>
+                <a href="{{ url_for('login') }}" class="btn" style="margin-bottom: 10px;">🚀 Fazer Login</a>
+                <a href="{{ url_for('register') }}" class="btn btn-secondary">📝 Cadastrar</a>
             </div>
-
-            <div id="message" class="message"></div>
-        </form>
+        </div>
     </div>
-
-<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
