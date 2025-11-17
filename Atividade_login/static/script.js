@@ -226,3 +226,70 @@ function deleteAccount() {
         messageDiv.textContent = 'Erro ao deletar conta!';
     });
 }
+
+// Função para deletar produto com verificação de senha
+function deleteProduct(productId) {
+    const password = document.getElementById(`password_${productId}`).value;
+    const messageDiv = document.getElementById('productMessage');
+    
+    if (!password) {
+        messageDiv.className = 'message error';
+        messageDiv.textContent = 'Por favor, digite sua senha!';
+        return;
+    }
+    
+    if (!confirm('Tem certeza que deseja deletar este produto?')) {
+        return;
+    }
+    
+    const formData = new FormData();
+    formData.append('password', password);
+    
+    fetch(`/delete_my_product/${productId}`, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            messageDiv.className = 'message success';
+            messageDiv.textContent = data.message;
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
+        } else {
+            messageDiv.className = 'message error';
+            messageDiv.textContent = data.message;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        messageDiv.className = 'message error';
+        messageDiv.textContent = 'Erro ao deletar produto!';
+    });
+}
+
+// Event listener para os botões de deletar produto
+document.addEventListener('DOMContentLoaded', function() {
+    // ... (seu código existente aqui) ...
+    
+    // NOVO CÓDIGO - Event listener para os botões de deletar com senha
+    document.querySelectorAll('.delete-product-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            deleteProduct(productId);
+        });
+    });
+});
+
+// Código de debug - remova depois que estiver funcionando
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Página carregada!');
+    
+    const deleteButtons = document.querySelectorAll('.delete-product-btn');
+    console.log(`Encontrados ${deleteButtons.length} botões de deletar`);
+    
+    deleteButtons.forEach(btn => {
+        console.log('Botão encontrado:', btn);
+    });
+});

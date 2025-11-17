@@ -1,4 +1,3 @@
--- Criar o banco de dados
 CREATE DATABASE IF NOT EXISTS sistema_login;
 USE sistema_login;
 
@@ -29,3 +28,23 @@ CREATE TABLE IF NOT EXISTS products (
 CREATE INDEX idx_user_id ON products(user_id);
 CREATE INDEX idx_username ON users(username);
 CREATE INDEX idx_category ON products(category);
+
+SELECT * FROM users;
+
+SELECT * FROM products;
+
+SELECT 
+    u.id as user_id,
+    u.username,
+    u.email,
+    u.created_at as data_cadastro,
+    p.id as product_id,
+    p.name as produto_nome,
+    p.description as descricao,
+    p.price as preco,
+    p.quantity as quantidade,
+    p.category as categoria,
+    p.created_at as produto_data
+FROM users u
+LEFT JOIN products p ON u.id = p.user_id
+ORDER BY u.username, p.name;

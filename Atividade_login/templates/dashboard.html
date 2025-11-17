@@ -97,16 +97,16 @@
                             <strong>{{ product.name }}</strong> - R$ {{ "%.2f"|format(product.price) }}
                             <br><small>{{ product.description }}</small>
                         </div>
-                        <div class="delete-action">
-                            <input type="password" 
-                                   id="password_{{ product.id }}" 
-                                   placeholder="Digite sua senha" 
-                                   class="password-input">
-                           <button data-product-id="{{ product.id }}" 
-                              class="btn btn-danger btn-small delete-product-btn">
-                                 🗑️ Deletar
-                                    </button>
-                        </div>
+                    <div class="delete-action">
+                        <input type="password" 
+                            id="password_{{ product.id }}" 
+                            placeholder="Digite sua senha" 
+                            class="password-input">
+                        <button data-product-id="{{ product.id }}" 
+                                class="btn btn-danger btn-small delete-product-btn">
+                            🗑️ Deletar
+                        </button>
+                    </div>
                     </div>
                     {% endfor %}
                 {% else %}
