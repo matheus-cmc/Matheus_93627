@@ -102,10 +102,10 @@
                                    id="password_{{ product.id }}" 
                                    placeholder="Digite sua senha" 
                                    class="password-input">
-                            <button onclick="deleteProduct({{ product.id }})" 
-                                    class="btn btn-danger btn-small">
-                                🗑️ Deletar
-                            </button>
+                           <button data-product-id="{{ product.id }}" 
+                              class="btn btn-danger btn-small delete-product-btn">
+                                 🗑️ Deletar
+                                    </button>
                         </div>
                     </div>
                     {% endfor %}
