@@ -185,14 +185,19 @@ function deleteProduct(productId) {
     });
 }
 
-// Função para deletar conta com verificação de senha
+// Função para deletar conta
 function deleteAccount() {
-    const password = document.getElementById('delete_account_password').value;
+    const passwordInput = document.getElementById('delete_account_password');
+    const password = passwordInput.value;
     const messageDiv = document.getElementById('productMessage');
+    
+    // Limpar mensagens anteriores
+    messageDiv.className = '';
+    messageDiv.textContent = '';
     
     if (!password) {
         messageDiv.className = 'message error';
-        messageDiv.textContent = 'Por favor, digite sua senha!';
+        messageDiv.textContent = '❌ Por favor, digite sua senha!';
         return;
     }
     
@@ -211,30 +216,47 @@ function deleteAccount() {
     .then(data => {
         if (data.success) {
             messageDiv.className = 'message success';
-            messageDiv.textContent = data.message;
+            messageDiv.textContent = '✅ ' + data.message;
+            // Limpar o campo de senha
+            passwordInput.value = '';
             setTimeout(() => {
                 window.location.href = '/';
             }, 2000);
         } else {
             messageDiv.className = 'message error';
-            messageDiv.textContent = data.message;
+            messageDiv.textContent = '❌ ' + data.message;
+            // Limpar o campo de senha
+            passwordInput.value = '';
         }
     })
     .catch(error => {
         console.error('Error:', error);
         messageDiv.className = 'message error';
-        messageDiv.textContent = 'Erro ao deletar conta!';
+        messageDiv.textContent = '❌ Erro ao deletar conta!';
+        passwordInput.value = '';
     });
 }
 
 // Função para deletar produto com verificação de senha
 function deleteProduct(productId) {
-    const password = document.getElementById(`password_${productId}`).value;
+    console.log('Tentando deletar produto:', productId);
+    
+    const passwordInput = document.getElementById(`password_${productId}`);
+    if (!passwordInput) {
+        console.error('Campo de senha não encontrado para o produto:', productId);
+        return;
+    }
+    
+    const password = passwordInput.value;
     const messageDiv = document.getElementById('productMessage');
+    
+    // Limpar mensagens anteriores
+    messageDiv.className = '';
+    messageDiv.textContent = '';
     
     if (!password) {
         messageDiv.className = 'message error';
-        messageDiv.textContent = 'Por favor, digite sua senha!';
+        messageDiv.textContent = '❌ Por favor, digite sua senha!';
         return;
     }
     
@@ -253,19 +275,24 @@ function deleteProduct(productId) {
     .then(data => {
         if (data.success) {
             messageDiv.className = 'message success';
-            messageDiv.textContent = data.message;
+            messageDiv.textContent = '✅ ' + data.message;
+            // Limpar o campo de senha
+            passwordInput.value = '';
             setTimeout(() => {
                 location.reload();
             }, 1500);
         } else {
             messageDiv.className = 'message error';
-            messageDiv.textContent = data.message;
+            messageDiv.textContent = '❌ ' + data.message;
+            // Limpar o campo de senha
+            passwordInput.value = '';
         }
     })
     .catch(error => {
         console.error('Error:', error);
         messageDiv.className = 'message error';
-        messageDiv.textContent = 'Erro ao deletar produto!';
+        messageDiv.textContent = '❌ Erro ao deletar produto!';
+        passwordInput.value = '';
     });
 }
 
