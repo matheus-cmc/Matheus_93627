@@ -247,6 +247,9 @@ input:focus, select:focus {
     border: 2px solid transparent;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .success {
@@ -279,17 +282,6 @@ input:focus, select:focus {
 .password-input.success {
     border-color: #2ecc71;
     background-color: rgba(46, 204, 113, 0.05);
-}
-.success {
-    background-color: rgba(46, 204, 113, 0.1);
-    color: var(--primary-dark);
-    border-color: var(--primary);
-}
-
-.error {
-    background-color: rgba(231, 76, 60, 0.1);
-    color: #c0392b;
-    border-color: var(--accent);
 }
 
 /* Dashboard Styles */
@@ -352,6 +344,7 @@ input:focus, select:focus {
     border-left: 4px solid var(--primary);
     transition: var(--transition);
     position: relative;
+    min-height: 180px;
 }
 
 .product-card:hover {
@@ -364,6 +357,7 @@ input:focus, select:focus {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 12px;
+    padding-right: 30px; /* Espaço para o botão X */
 }
 
 .product-name {
@@ -372,6 +366,7 @@ input:focus, select:focus {
     color: var(--dark);
     margin-bottom: 5px;
     line-height: 1.2;
+    flex: 1;
 }
 
 .product-price {
@@ -379,9 +374,11 @@ input:focus, select:focus {
     font-weight: 700;
     color: var(--primary);
     background: rgba(46, 204, 113, 0.1);
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
     border: 1px solid rgba(46, 204, 113, 0.2);
+    text-align: center;
+    min-width: 80px;
 }
 
 .product-category {
@@ -392,6 +389,7 @@ input:focus, select:focus {
     font-size: 0.8rem;
     font-weight: 600;
     display: inline-block;
+    margin-top: 5px;
 }
 
 .product-description {
@@ -424,6 +422,7 @@ input:focus, select:focus {
     font-size: 0.8rem;
 }
 
+/* Botão deletar (×) nos cards de produto - POSIÇÃO CORRIGIDA */
 .delete-btn {
     position: absolute;
     top: 12px;
@@ -438,14 +437,17 @@ input:focus, select:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     transition: var(--transition);
+    z-index: 20;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .delete-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     background: #c0392b;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 /* Seções de perigo */
@@ -490,6 +492,12 @@ input:focus, select:focus {
     margin-bottom: 10px;
     width: 100%;
     font-size: 14px;
+    transition: var(--transition);
+}
+
+.password-input:focus {
+    border-color: var(--primary);
+    outline: none;
 }
 
 .delete-account-form {
@@ -505,6 +513,11 @@ input:focus, select:focus {
     border: 1px solid #e1e8ed;
     border-radius: 8px;
     margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.product-delete-item:hover {
+    background: #f8f9fa;
 }
 
 .product-info {
@@ -660,6 +673,15 @@ input:focus, select:focus {
     .delete-action {
         justify-content: space-between;
     }
+    
+    .product-header {
+        padding-right: 25px;
+    }
+    
+    .product-price {
+        font-size: 1.2rem;
+        min-width: 70px;
+    }
 }
 
 /* Animations */
@@ -746,4 +768,13 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+
+/* Garantir que as mensagens sejam sempre visíveis */
+#productMessage,
+#message {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 20px;
 }
